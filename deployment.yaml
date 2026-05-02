@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autodeployx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autodeployx
+  template:
+    metadata:
+      labels:
+        app: autodeployx
+    spec:
+      containers:
+      - name: autodeployx
+        image: dalwin205/autodeployx
+        ports:
+        - containerPort: 3000
